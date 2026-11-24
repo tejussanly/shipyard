@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linux &amp; the shell · Shipyard</title>
+    <meta name="description" content="Linux &amp; the shell: Every server you deploy to is almost certainly Linux. A short DevOps lesson with a practice terminal and quiz." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2306222e'/%3E%3Crect x='6' y='9' width='9' height='6' fill='%23ff2e7e'/%3E%3Crect x='17' y='9' width='9' height='6' fill='%23dff1f7'/%3E%3Cpath d='M4 18h24l-4 6H8z' fill='%23dff1f7'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body data-page="topics" data-root="../" data-topic="linux">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <div class="wrap bar">
+        <a class="brand" href="../index.html"><svg viewBox="0 0 40 30" aria-hidden="true" class="logo"><rect x="5" y="3" width="13" height="9" rx="1.5" fill="#ff2e7e"/><rect x="21" y="3" width="13" height="9" rx="1.5" fill="#dff1f7"/><path d="M1 15h38l-5 10H6z" fill="#dff1f7"/></svg><span>Shipyard</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+        <nav class="links" id="main-nav" aria-label="Main">
+          <a href="../index.html" data-nav="home">Home</a>
+          <a href="../roadmap.html" data-nav="roadmap">Roadmap</a>
+          <a href="../index.html#topics" data-nav="topics">Topics</a>
+          <a href="../index.html#how" data-nav="how">How it works</a>
+        </nav>
+        <div class="hud" aria-label="Your progress">
+          <span><b data-xp>700</b> XP</span>
+          <span><b data-streak>12</b>-day streak</span>
+          <span class="avatar" title="Tejus Sanly">TS</span>
+        </div>
+      </div>
+      <div class="meter" aria-hidden="true"><i data-meter style="width:70%"></i></div>
+    </header>
+
+    <main id="main">
+      <section class="page-head topic-head">
+        <div class="wrap">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#topics">Topics</a> / <span>Linux &amp; the shell</span></nav>
+          <div class="topic-title">
+            <span class="big-code" data-status="locked">LNX</span>
+            <div>
+              <p class="eyebrow">Topic 1 of 10 · <span class="pill" data-topic-status>…</span></p>
+              <h1>Linux &amp; the shell</h1>
+              <p class="lead">Every server you deploy to is almost certainly Linux.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="wrap topic-layout">
+        <article class="topic-body">
+          <section id="lesson">
+            <h2>Lesson</h2>
+            <p>Linux runs most of the world’s servers, containers and cloud machines, so a DevOps engineer lives in the terminal. The shell (usually bash) lets you move around the file system, inspect processes, read logs and automate anything you can type.</p>
+            <p>Everything is a file: configs live in /etc, logs in /var/log, your home is ~. Permissions decide who can read (r), write (w) or execute (x) a file, for its owner, its group and everyone else.</p>
+            <p>Processes are running programs. You list them with ps or top, stop them with kill, and manage long-running services with systemctl.</p>
+            <h3>Key points</h3>
+            <ul class="keys">
+              <li>Navigate: pwd, ls, cd</li>
+              <li>Inspect: cat, less, tail -f</li>
+              <li>Permissions: chmod, chown</li>
+              <li>Services: systemctl</li>
+            </ul>
+          </section>
+
+          <section id="practice">
+            <h2>Practise in the terminal</h2>
+            <p>This is a simulated Linux machine with real commands: files, git, docker, kubectl, terraform, aws and more. Type a command and press Enter, or click the suggestions below in order. Nothing touches a real computer.</p>
+            <div id="terminal">
+              <ul class="cmd-list">
+                <li><code>pwd</code> Where am I?</li>
+                <li><code>ls -la</code> List all files with details</li>
+                <li><code>cat notes.txt</code> Read a file</li>
+                <li><code>mkdir -p projects/demo &amp;&amp; cd projects/demo</code> Make folders and move into them</li>
+                <li><code>echo &quot;hello&quot; &gt; hello.txt</code> Write text into a file</li>
+                <li><code>cd ~ &amp;&amp; ./deploy.sh</code> Try to run a script (it will fail)</li>
+                <li><code>chmod +x deploy.sh</code> Make the script executable</li>
+                <li><code>./deploy.sh</code> Run it again</li>
+                <li><code>grep ERROR logs/app.log</code> Find errors in a log</li>
+                <li><code>ps aux</code> List running processes</li>
+                <li><code>systemctl status nginx</code> Check a service</li>
+                <li><code>tail -n 5 /var/log/syslog</code> Last 5 lines of the system log</li>
+                <li><code>df -h</code> Disk space</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="quiz-section">
+            <h2>Quiz</h2>
+            <p>Get all 3 right to load this container and earn 100 XP.</p>
+            <div id="quiz" class="quiz"><p class="notice">The quiz needs JavaScript turned on.</p></div>
+          </section>
+
+          <nav class="pager" aria-label="More topics">
+            <span></span>
+            <a class="next" href="networking.html"><small>Next</small>Networking basics</a>
+          </nav>
+        </article>
+
+        <aside class="topic-side">
+          <div class="side-box">
+            <b>On this page</b>
+            <a href="#lesson">Lesson</a>
+            <a href="#practice">Practise in the terminal</a>
+            <a href="#quiz-section">Quiz</a>
+          </div>
+          <div class="side-box">
+            <b>Builds on</b>
+            <p>Nothing, start here</p>
+            <b>Unlocks</b><p><a href="networking.html">Networking basics</a>, <a href="git.html">Git &amp; version control</a>, <a href="scripting.html">Scripting &amp; automation</a></p>
+          </div>
+          <div class="side-box">
+            <b>All topics</b>
+            <ul class="mini">
+              <li data-status-of="linux" aria-current="page"><a href="linux.html"><span class="code">LNX</span> Linux &amp; the shell</a></li>
+              <li data-status-of="networking"><a href="networking.html"><span class="code">NET</span> Networking basics</a></li>
+              <li data-status-of="git"><a href="git.html"><span class="code">GIT</span> Git &amp; version control</a></li>
+              <li data-status-of="scripting"><a href="scripting.html"><span class="code">SH</span> Scripting &amp; automation</a></li>
+              <li data-status-of="cicd"><a href="cicd.html"><span class="code">CI</span> CI/CD pipelines</a></li>
+              <li data-status-of="docker"><a href="docker.html"><span class="code">DKR</span> Docker &amp; containers</a></li>
+              <li data-status-of="cloud"><a href="cloud.html"><span class="code">AWS</span> Cloud fundamentals</a></li>
+              <li data-status-of="kubernetes"><a href="kubernetes.html"><span class="code">K8S</span> Kubernetes</a></li>
+              <li data-status-of="iac"><a href="iac.html"><span class="code">TF</span> Infrastructure as Code</a></li>
+              <li data-status-of="monitoring"><a href="monitoring.html"><span class="code">MON</span> Monitoring &amp; observability</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap foot">
+        <div>
+          <a class="brand" href="../index.html"><svg viewBox="0 0 40 30" aria-hidden="true" class="logo"><rect x="5" y="3" width="13" height="9" rx="1.5" fill="#ff2e7e"/><rect x="21" y="3" width="13" height="9" rx="1.5" fill="#dff1f7"/><path d="M1 15h38l-5 10H6z" fill="#dff1f7"/></svg><span>Shipyard</span></a>
+          <p>A DevOps learning website by Tejus Sanly. Built with HTML, CSS, JavaScript and React Flow, hosted on GitHub Pages.</p>
+        </div>
+        <nav aria-label="Footer">
+          <b>Explore</b>
+          <a href="../index.html">Home</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../index.html#topics">All topics</a>
+        </nav>
+        <nav aria-label="Topics">
+          <b>Start here</b>
+          <a href="../topics/linux.html">Linux &amp; the shell</a>
+          <a href="../topics/networking.html">Networking basics</a>
+          <a href="../topics/git.html">Git &amp; version control</a>
+          <a href="../topics/scripting.html">Scripting &amp; automation</a>
+        </nav>
+        <div>
+          <b>Your progress</b>
+          <p><span data-count>7</span> of 10 topics · <span data-xp>700</span> XP</p>
+          <button class="link" type="button" data-reset>Reset progress</button>
+        </div>
+      </div>
+      <p class="wrap copy">© 2026 Tejus Sanly · Shipyard</p>
+    </footer>
+    <script type="module" src="../site.js"></script>
+  </body>
+</html>

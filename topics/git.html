@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git &amp; version control · Shipyard</title>
+    <meta name="description" content="Git &amp; version control: The starting point of every pipeline. A short DevOps lesson with a practice terminal and quiz." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2306222e'/%3E%3Crect x='6' y='9' width='9' height='6' fill='%23ff2e7e'/%3E%3Crect x='17' y='9' width='9' height='6' fill='%23dff1f7'/%3E%3Cpath d='M4 18h24l-4 6H8z' fill='%23dff1f7'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body data-page="topics" data-root="../" data-topic="git">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <div class="wrap bar">
+        <a class="brand" href="../index.html"><svg viewBox="0 0 40 30" aria-hidden="true" class="logo"><rect x="5" y="3" width="13" height="9" rx="1.5" fill="#ff2e7e"/><rect x="21" y="3" width="13" height="9" rx="1.5" fill="#dff1f7"/><path d="M1 15h38l-5 10H6z" fill="#dff1f7"/></svg><span>Shipyard</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+        <nav class="links" id="main-nav" aria-label="Main">
+          <a href="../index.html" data-nav="home">Home</a>
+          <a href="../roadmap.html" data-nav="roadmap">Roadmap</a>
+          <a href="../index.html#topics" data-nav="topics">Topics</a>
+          <a href="../index.html#how" data-nav="how">How it works</a>
+        </nav>
+        <div class="hud" aria-label="Your progress">
+          <span><b data-xp>700</b> XP</span>
+          <span><b data-streak>12</b>-day streak</span>
+          <span class="avatar" title="Tejus Sanly">TS</span>
+        </div>
+      </div>
+      <div class="meter" aria-hidden="true"><i data-meter style="width:70%"></i></div>
+    </header>
+
+    <main id="main">
+      <section class="page-head topic-head">
+        <div class="wrap">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#topics">Topics</a> / <span>Git &amp; version control</span></nav>
+          <div class="topic-title">
+            <span class="big-code" data-status="locked">GIT</span>
+            <div>
+              <p class="eyebrow">Topic 3 of 10 · <span class="pill" data-topic-status>…</span></p>
+              <h1>Git &amp; version control</h1>
+              <p class="lead">The starting point of every pipeline.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="wrap topic-layout">
+        <article class="topic-body">
+          <section id="lesson">
+            <h2>Lesson</h2>
+            <p>Git records snapshots (commits) of your code so you can see who changed what, roll back mistakes and work in parallel. Every CI/CD pipeline starts with a git event, usually a push or a pull request.</p>
+            <p>Branches let you build a feature without touching main. When it is ready you open a pull request, teammates review it, CI runs the tests, and then it is merged.</p>
+            <p>A remote (like GitHub) is the shared copy. You push your commits to it and pull other people’s commits from it.</p>
+            <h3>Key points</h3>
+            <ul class="keys">
+              <li>Commit = snapshot</li>
+              <li>Branch → PR → merge</li>
+              <li>push / pull to the remote</li>
+              <li>A push can trigger CI</li>
+            </ul>
+          </section>
+
+          <section id="practice">
+            <h2>Practise in the terminal</h2>
+            <p>This is a simulated Linux machine with real commands: files, git, docker, kubectl, terraform, aws and more. Type a command and press Enter, or click the suggestions below in order. Nothing touches a real computer.</p>
+            <div id="terminal">
+              <ul class="cmd-list">
+                <li><code>git status</code> What changed?</li>
+                <li><code>git diff</code> See the exact changes</li>
+                <li><code>git add .</code> Stage everything</li>
+                <li><code>git commit -m &quot;Add exclamation mark&quot;</code> Save a snapshot</li>
+                <li><code>git log --oneline</code> Commit history</li>
+                <li><code>git checkout -b feature/login</code> Create a branch</li>
+                <li><code>echo &quot;&lt;h2&gt;Login&lt;/h2&gt;&quot; &gt;&gt; index.html</code> Change a file</li>
+                <li><code>git commit -am &quot;Add login heading&quot;</code> Stage tracked files and commit</li>
+                <li><code>git push -u origin feature/login</code> Upload the branch</li>
+                <li><code>git switch main</code> Go back to main</li>
+                <li><code>git merge feature/login</code> Merge the branch</li>
+                <li><code>git branch</code> List branches</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="quiz-section">
+            <h2>Quiz</h2>
+            <p>Get all 3 right to load this container and earn 100 XP.</p>
+            <div id="quiz" class="quiz"><p class="notice">The quiz needs JavaScript turned on.</p></div>
+          </section>
+
+          <nav class="pager" aria-label="More topics">
+            <a href="networking.html"><small>Previous</small>Networking basics</a>
+            <a class="next" href="scripting.html"><small>Next</small>Scripting &amp; automation</a>
+          </nav>
+        </article>
+
+        <aside class="topic-side">
+          <div class="side-box">
+            <b>On this page</b>
+            <a href="#lesson">Lesson</a>
+            <a href="#practice">Practise in the terminal</a>
+            <a href="#quiz-section">Quiz</a>
+          </div>
+          <div class="side-box">
+            <b>Builds on</b>
+            <p><a href="linux.html">Linux &amp; the shell</a></p>
+            <b>Unlocks</b><p><a href="cicd.html">CI/CD pipelines</a></p>
+          </div>
+          <div class="side-box">
+            <b>All topics</b>
+            <ul class="mini">
+              <li data-status-of="linux"><a href="linux.html"><span class="code">LNX</span> Linux &amp; the shell</a></li>
+              <li data-status-of="networking"><a href="networking.html"><span class="code">NET</span> Networking basics</a></li>
+              <li data-status-of="git" aria-current="page"><a href="git.html"><span class="code">GIT</span> Git &amp; version control</a></li>
+              <li data-status-of="scripting"><a href="scripting.html"><span class="code">SH</span> Scripting &amp; automation</a></li>
+              <li data-status-of="cicd"><a href="cicd.html"><span class="code">CI</span> CI/CD pipelines</a></li>
+              <li data-status-of="docker"><a href="docker.html"><span class="code">DKR</span> Docker &amp; containers</a></li>
+              <li data-status-of="cloud"><a href="cloud.html"><span class="code">AWS</span> Cloud fundamentals</a></li>
+              <li data-status-of="kubernetes"><a href="kubernetes.html"><span class="code">K8S</span> Kubernetes</a></li>
+              <li data-status-of="iac"><a href="iac.html"><span class="code">TF</span> Infrastructure as Code</a></li>
+              <li data-status-of="monitoring"><a href="monitoring.html"><span class="code">MON</span> Monitoring &amp; observability</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap foot">
+        <div>
+          <a class="brand" href="../index.html"><svg viewBox="0 0 40 30" aria-hidden="true" class="logo"><rect x="5" y="3" width="13" height="9" rx="1.5" fill="#ff2e7e"/><rect x="21" y="3" width="13" height="9" rx="1.5" fill="#dff1f7"/><path d="M1 15h38l-5 10H6z" fill="#dff1f7"/></svg><span>Shipyard</span></a>
+          <p>A DevOps learning website by Tejus Sanly. Built with HTML, CSS, JavaScript and React Flow, hosted on GitHub Pages.</p>
+        </div>
+        <nav aria-label="Footer">
+          <b>Explore</b>
+          <a href="../index.html">Home</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../index.html#topics">All topics</a>
+        </nav>
+        <nav aria-label="Topics">
+          <b>Start here</b>
+          <a href="../topics/linux.html">Linux &amp; the shell</a>
+          <a href="../topics/networking.html">Networking basics</a>
+          <a href="../topics/git.html">Git &amp; version control</a>
+          <a href="../topics/scripting.html">Scripting &amp; automation</a>
+        </nav>
+        <div>
+          <b>Your progress</b>
+          <p><span data-count>7</span> of 10 topics · <span data-xp>700</span> XP</p>
+          <button class="link" type="button" data-reset>Reset progress</button>
+        </div>
+      </div>
+      <p class="wrap copy">© 2026 Tejus Sanly · Shipyard</p>
+    </footer>
+    <script type="module" src="../site.js"></script>
+  </body>
+</html>

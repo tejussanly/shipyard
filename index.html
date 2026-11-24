@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shipyard · Learn DevOps</title>
+    <meta name="description" content="Shipyard — a DevOps learning website by Tejus Sanly. Lessons, practice terminals and quizzes for Linux, Git, CI/CD, Docker, Kubernetes and more." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2306222e'/%3E%3Crect x='6' y='9' width='9' height='6' fill='%23ff2e7e'/%3E%3Crect x='17' y='9' width='9' height='6' fill='%23dff1f7'/%3E%3Cpath d='M4 18h24l-4 6H8z' fill='%23dff1f7'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-page="home" data-root="./">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <div class="wrap bar">
+        <a class="brand" href="./index.html"><svg viewBox="0 0 40 30" aria-hidden="true" class="logo"><rect x="5" y="3" width="13" height="9" rx="1.5" fill="#ff2e7e"/><rect x="21" y="3" width="13" height="9" rx="1.5" fill="#dff1f7"/><path d="M1 15h38l-5 10H6z" fill="#dff1f7"/></svg><span>Shipyard</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+        <nav class="links" id="main-nav" aria-label="Main">
+          <a href="./index.html" data-nav="home">Home</a>
+          <a href="./roadmap.html" data-nav="roadmap">Roadmap</a>
+          <a href="./index.html#topics" data-nav="topics">Topics</a>
+          <a href="./index.html#how" data-nav="how">How it works</a>
+        </nav>
+        <div class="hud" aria-label="Your progress">
+          <span><b data-xp>700</b> XP</span>
+          <span><b data-streak>12</b>-day streak</span>
+          <span class="avatar" title="Tejus Sanly">TS</span>
+        </div>
+      </div>
+      <div class="meter" aria-hidden="true"><i data-meter style="width:70%"></i></div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="wrap">
+          <p class="eyebrow" data-hello>Welcome back, Tejus</p>
+          <h1>Learn DevOps, one container at a time.</h1>
+          <p class="lead">Ten topics from Linux to monitoring. Read the lesson, practise in the terminal, pass the quiz, and load another container onto your ship.</p>
+          <div class="actions">
+            <a class="btn" href="topics/cloud.html" data-next>Continue: Cloud fundamentals →</a>
+            <a class="btn btn-ghost" href="roadmap.html">View the roadmap</a>
+          </div>
+          <dl class="stats">
+            <div><dt>XP earned</dt><dd data-xp>700</dd></div>
+            <div><dt>Day streak</dt><dd data-streak>12</dd></div>
+            <div><dt>Complete</dt><dd data-pct>70%</dd></div>
+            <div><dt>Topics loaded</dt><dd><span data-count>7</span>/10</dd></div>
+          </dl>
+          <figure class="ship-panel">
+            <div id="ship" class="ship"></div>
+            <figcaption class="legend">
+              <span><i class="k k-done"></i> Loaded</span>
+              <span><i class="k k-open"></i> Ready to load</span>
+              <span><i class="k k-locked"></i> Locked</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="band" id="topics">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>All 10 topics</h2>
+            <p>Each topic unlocks when the ones it builds on are loaded.</p>
+          </div>
+          <div class="cards">
+          <a class="card" href="./topics/linux.html" data-status-of="linux">
+            <span class="code">LNX</span>
+            <h3>Linux &amp; the shell</h3>
+            <p>Every server you deploy to is almost certainly Linux.</p>
+            <span class="status" data-status-label>…</span>
+          </a>
+          <a class="card" href="./topics/networking.html" data-status-of="networking">
+            <span class="code">NET</span>
+            <h3>Networking basics</h3>
+            <p>How requests actually reach your app.</p>
+            <span class="status" data-status-label>…</span>
+          </a>
+          <a class="card" href="./topics/git.html" data-status-of="git">
+            <span class="code">GIT</span>
+            <h3>Git &amp; version control</h3>
+            <p>The starting point of every pipeline.</p>
+            <span class="status" data-status-label>…</span>
+          </a>
+          <a class="card" href="./topics/scripting.html" data-status-of="scripting">
+            <span class="code">SH</span>
+            <h3>Scripting &amp; automation</h3>
+            <p>If you do it twice, script it.</p>
+            <span class="status" data-status-label>…</span>
+          </a>
+          <a class="card" href="./topics/cicd.html" data-status-of="cicd">
+            <span class="code">CI</span>
+            <h3>CI/CD pipelines</h3>
+            <p>From git push to production, automatically.</p>
+            <span class="status" data-status-label>…</span>
+          </a>
+          <a class="card" href="./topics/docker.html" data-status-of="docker">
+            <span class="code">DKR</span>
+            <h3>Docker &amp; containers</h3>
+            <p>“Works on my machine” → works everywhere.</p>
+            <span class="status" data-status-label>…</span>
+          </a>
+          <a class="card" href="./topics/cloud.html" data-status-of="cloud">
+            <span class="code">AWS</span>
+            <h3>Cloud fundamentals</h3>
+            <p>Renting computers by the second.</p>
+            <span class="status" data-status-label>…</span>
+          </a>
+          <a class="card" href="./topics/kubernetes.html" data-status-of="kubernetes">
+            <span class="code">K8S</span>
+            <h3>Kubernetes</h3>
+            <p>Running many containers without babysitting them.</p>
+            <span class="status" data-status-label>…</span>
+          </a>
+          <a class="card" href="./topics/iac.html" data-status-of="iac">
+            <span class="code">TF</span>
+            <h3>Infrastructure as Code</h3>
+            <p>Servers defined in files, reviewed like code.</p>
+            <span class="status" data-status-label>…</span>
+          </a>
+          <a class="card" href="./topics/monitoring.html" data-status-of="monitoring">
+            <span class="code">MON</span>
+            <h3>Monitoring &amp; observability</h3>
+            <p>Know it’s broken before your users do.</p>
+            <span class="status" data-status-label>…</span>
+          </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="band band-white" id="how">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>How it works</h2>
+            <p>Every topic page follows the same three steps.</p>
+          </div>
+          <ol class="steps">
+            <li><b>Read the lesson</b><p>A short explanation of the idea and why DevOps teams use it, with the key points to remember.</p></li>
+            <li><b>Practise in the terminal</b><p>Type real commands (git, docker, kubectl, terraform…) into a practice terminal and see what they return.</p></li>
+            <li><b>Pass the quiz</b><p>Get all three questions right to load the container, earn 100 XP and unlock the next topics.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="band band-ink">
+        <div class="wrap cta">
+          <div>
+            <h2>See how it all connects</h2>
+            <p>The roadmap is an interactive diagram built with React Flow. Arrows show what each topic needs first.</p>
+          </div>
+          <a class="btn btn-pink" href="roadmap.html">Open the roadmap →</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap foot">
+        <div>
+          <a class="brand" href="./index.html"><svg viewBox="0 0 40 30" aria-hidden="true" class="logo"><rect x="5" y="3" width="13" height="9" rx="1.5" fill="#ff2e7e"/><rect x="21" y="3" width="13" height="9" rx="1.5" fill="#dff1f7"/><path d="M1 15h38l-5 10H6z" fill="#dff1f7"/></svg><span>Shipyard</span></a>
+          <p>A DevOps learning website by Tejus Sanly. Built with HTML, CSS, JavaScript and React Flow, hosted on GitHub Pages.</p>
+        </div>
+        <nav aria-label="Footer">
+          <b>Explore</b>
+          <a href="./index.html">Home</a>
+          <a href="./roadmap.html">Roadmap</a>
+          <a href="./index.html#topics">All topics</a>
+        </nav>
+        <nav aria-label="Topics">
+          <b>Start here</b>
+          <a href="./topics/linux.html">Linux &amp; the shell</a>
+          <a href="./topics/networking.html">Networking basics</a>
+          <a href="./topics/git.html">Git &amp; version control</a>
+          <a href="./topics/scripting.html">Scripting &amp; automation</a>
+        </nav>
+        <div>
+          <b>Your progress</b>
+          <p><span data-count>7</span> of 10 topics · <span data-xp>700</span> XP</p>
+          <button class="link" type="button" data-reset>Reset progress</button>
+        </div>
+      </div>
+      <p class="wrap copy">© 2026 Tejus Sanly · Shipyard</p>
+    </footer>
+    <script type="module" src="site.js"></script>
+  </body>
+</html>

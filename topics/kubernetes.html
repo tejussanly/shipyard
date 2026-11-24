@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kubernetes · Shipyard</title>
+    <meta name="description" content="Kubernetes: Running many containers without babysitting them. A short DevOps lesson with a practice terminal and quiz." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2306222e'/%3E%3Crect x='6' y='9' width='9' height='6' fill='%23ff2e7e'/%3E%3Crect x='17' y='9' width='9' height='6' fill='%23dff1f7'/%3E%3Cpath d='M4 18h24l-4 6H8z' fill='%23dff1f7'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body data-page="topics" data-root="../" data-topic="kubernetes">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <div class="wrap bar">
+        <a class="brand" href="../index.html"><svg viewBox="0 0 40 30" aria-hidden="true" class="logo"><rect x="5" y="3" width="13" height="9" rx="1.5" fill="#ff2e7e"/><rect x="21" y="3" width="13" height="9" rx="1.5" fill="#dff1f7"/><path d="M1 15h38l-5 10H6z" fill="#dff1f7"/></svg><span>Shipyard</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+        <nav class="links" id="main-nav" aria-label="Main">
+          <a href="../index.html" data-nav="home">Home</a>
+          <a href="../roadmap.html" data-nav="roadmap">Roadmap</a>
+          <a href="../index.html#topics" data-nav="topics">Topics</a>
+          <a href="../index.html#how" data-nav="how">How it works</a>
+        </nav>
+        <div class="hud" aria-label="Your progress">
+          <span><b data-xp>700</b> XP</span>
+          <span><b data-streak>12</b>-day streak</span>
+          <span class="avatar" title="Tejus Sanly">TS</span>
+        </div>
+      </div>
+      <div class="meter" aria-hidden="true"><i data-meter style="width:70%"></i></div>
+    </header>
+
+    <main id="main">
+      <section class="page-head topic-head">
+        <div class="wrap">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#topics">Topics</a> / <span>Kubernetes</span></nav>
+          <div class="topic-title">
+            <span class="big-code" data-status="locked">K8S</span>
+            <div>
+              <p class="eyebrow">Topic 8 of 10 · <span class="pill" data-topic-status>…</span></p>
+              <h1>Kubernetes</h1>
+              <p class="lead">Running many containers without babysitting them.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="wrap topic-layout">
+        <article class="topic-body">
+          <section id="lesson">
+            <h2>Lesson</h2>
+            <p>Once you have dozens of containers across many machines, you need something to schedule them, restart them when they crash and scale them with traffic. That is Kubernetes (K8s).</p>
+            <p>The core objects: a Pod runs one or more containers; a Deployment keeps N copies of a Pod running and handles rolling updates; a Service gives those Pods one stable address.</p>
+            <p>You describe the desired state in YAML and apply it. Kubernetes continuously works to make reality match what you declared.</p>
+            <h3>Key points</h3>
+            <ul class="keys">
+              <li>Pod → Deployment → Service</li>
+              <li>Desired state in YAML</li>
+              <li>Self-healing &amp; scaling</li>
+              <li>kubectl is the CLI</li>
+            </ul>
+          </section>
+
+          <section id="practice">
+            <h2>Practise in the terminal</h2>
+            <p>This is a simulated Linux machine with real commands: files, git, docker, kubectl, terraform, aws and more. Type a command and press Enter, or click the suggestions below in order. Nothing touches a real computer.</p>
+            <div id="terminal">
+              <ul class="cmd-list">
+                <li><code>kubectl get nodes</code> Machines in the cluster</li>
+                <li><code>kubectl get pods</code> Running pods</li>
+                <li><code>kubectl get deployments</code> Deployments</li>
+                <li><code>kubectl scale deployment shipyard --replicas=4</code> Scale out</li>
+                <li><code>kubectl get pods</code> Now there are 4</li>
+                <li><code>kubectl delete $(kubectl get pods -o name | head -n 1)</code> Kill a pod…</li>
+                <li><code>kubectl get pods</code> …Kubernetes replaces it</li>
+                <li><code>cat deployment.yaml</code> Desired state as YAML</li>
+                <li><code>kubectl apply -f deployment.yaml</code> Apply it</li>
+                <li><code>kubectl set image deployment/shipyard app=shipyard:2.0</code> Release a new version</li>
+                <li><code>kubectl rollout history deployment/shipyard</code> Release history</li>
+                <li><code>kubectl rollout undo deployment/shipyard</code> Roll back</li>
+                <li><code>kubectl get svc</code> Services</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="quiz-section">
+            <h2>Quiz</h2>
+            <p>Get all 3 right to load this container and earn 100 XP.</p>
+            <div id="quiz" class="quiz"><p class="notice">The quiz needs JavaScript turned on.</p></div>
+          </section>
+
+          <nav class="pager" aria-label="More topics">
+            <a href="cloud.html"><small>Previous</small>Cloud fundamentals</a>
+            <a class="next" href="iac.html"><small>Next</small>Infrastructure as Code</a>
+          </nav>
+        </article>
+
+        <aside class="topic-side">
+          <div class="side-box">
+            <b>On this page</b>
+            <a href="#lesson">Lesson</a>
+            <a href="#practice">Practise in the terminal</a>
+            <a href="#quiz-section">Quiz</a>
+          </div>
+          <div class="side-box">
+            <b>Builds on</b>
+            <p><a href="docker.html">Docker &amp; containers</a></p>
+            <b>Unlocks</b><p><a href="monitoring.html">Monitoring &amp; observability</a></p>
+          </div>
+          <div class="side-box">
+            <b>All topics</b>
+            <ul class="mini">
+              <li data-status-of="linux"><a href="linux.html"><span class="code">LNX</span> Linux &amp; the shell</a></li>
+              <li data-status-of="networking"><a href="networking.html"><span class="code">NET</span> Networking basics</a></li>
+              <li data-status-of="git"><a href="git.html"><span class="code">GIT</span> Git &amp; version control</a></li>
+              <li data-status-of="scripting"><a href="scripting.html"><span class="code">SH</span> Scripting &amp; automation</a></li>
+              <li data-status-of="cicd"><a href="cicd.html"><span class="code">CI</span> CI/CD pipelines</a></li>
+              <li data-status-of="docker"><a href="docker.html"><span class="code">DKR</span> Docker &amp; containers</a></li>
+              <li data-status-of="cloud"><a href="cloud.html"><span class="code">AWS</span> Cloud fundamentals</a></li>
+              <li data-status-of="kubernetes" aria-current="page"><a href="kubernetes.html"><span class="code">K8S</span> Kubernetes</a></li>
+              <li data-status-of="iac"><a href="iac.html"><span class="code">TF</span> Infrastructure as Code</a></li>
+              <li data-status-of="monitoring"><a href="monitoring.html"><span class="code">MON</span> Monitoring &amp; observability</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap foot">
+        <div>
+          <a class="brand" href="../index.html"><svg viewBox="0 0 40 30" aria-hidden="true" class="logo"><rect x="5" y="3" width="13" height="9" rx="1.5" fill="#ff2e7e"/><rect x="21" y="3" width="13" height="9" rx="1.5" fill="#dff1f7"/><path d="M1 15h38l-5 10H6z" fill="#dff1f7"/></svg><span>Shipyard</span></a>
+          <p>A DevOps learning website by Tejus Sanly. Built with HTML, CSS, JavaScript and React Flow, hosted on GitHub Pages.</p>
+        </div>
+        <nav aria-label="Footer">
+          <b>Explore</b>
+          <a href="../index.html">Home</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../index.html#topics">All topics</a>
+        </nav>
+        <nav aria-label="Topics">
+          <b>Start here</b>
+          <a href="../topics/linux.html">Linux &amp; the shell</a>
+          <a href="../topics/networking.html">Networking basics</a>
+          <a href="../topics/git.html">Git &amp; version control</a>
+          <a href="../topics/scripting.html">Scripting &amp; automation</a>
+        </nav>
+        <div>
+          <b>Your progress</b>
+          <p><span data-count>7</span> of 10 topics · <span data-xp>700</span> XP</p>
+          <button class="link" type="button" data-reset>Reset progress</button>
+        </div>
+      </div>
+      <p class="wrap copy">© 2026 Tejus Sanly · Shipyard</p>
+    </footer>
+    <script type="module" src="../site.js"></script>
+  </body>
+</html>
